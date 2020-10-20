@@ -1,0 +1,56 @@
+<html>
+  <head>algorithm</head>
+  <body>
+    <div>algorithm</div>
+    <script type="text/javascript">
+      const array = [1, 5, 2, 6, 3, 7, 4]
+      const commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
+
+      function solution2(array, commands) {
+        if (commands) {
+          let answer = []
+          for(let i=0; i<commands.length; i++) {
+            const item = array.slice(commands[i][0]-1, commands[i][1]).sort()
+            answer.push(item[commands[i][2]-1])
+            /*
+            const command = commands[i]
+            const item = array.slice(command[0]-1, command[1]).sort()
+            const number = command.slice(-1)[0]
+            answer.push(item[number-1])
+            */
+          }
+
+          return answer
+        }
+      }
+
+      function solution(answers) {
+        let person1 = [1, 2, 3, 4, 5]
+        let person2 = [2, 1, 2, 3, 2, 4, 2, 5]
+        let person3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+
+        let count1 = answers.filter((v, i) => v === person1[i % person1.length]).length
+        let count2 = answers.filter((v, i) => v === person2[i % person2.length]).length
+        let count3 = answers.filter((v, i) => v === person3[i % person3.length]).length
+        const max = Math.max(count1, count2, count3)
+
+        let answer = []
+        if (count1 === max) answer.push(1)
+        if (count2 === max) answer.push(2)
+        if (count3 === max) answer.push(3)
+
+        return answer
+      }
+
+      for(let i=0; i<2; i++) {
+        let arr = [
+          [1, 2, 3, 4, 5],
+          [1, 3, 2, 4, 2]
+        ]
+
+        solution(arr[i])
+        solution2()
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>lotto</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function lotto() {
+        let numberArray = []
+        for (let i = 0; i < 5; i++) {
+          const number = parseInt(Math.random() * 45 + 1)
+          if (!numberArray.find(n => n === number)) {
+            numberArray.push(number)
+          } else {
+            i--
+          }
+        }
+
+        console.log(numberArray)
+      }
+
+      lotto()
+    </script>
+  </body>
+</html
